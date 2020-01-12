@@ -1,0 +1,57 @@
+name: productive_app
+description: The productive App
+version: 1.0.0+1
+
+environment:
+  sdk: ">2.6.0 <3.0.0"
+
+dependencies:
+
+  #Widgets
+  flutter:
+    sdk: flutter
+  flutter_vector_icons: ^0.2.0
+  cached_network_image: ^2.0.0-rc
+
+  #Architecture
+  rxdart: ^0.18.0
+  provider: ^3.1.0+1
+  inject:
+    git:
+      url: https://github.com/google/inject.dart.git
+      path: package/inject
+
+  #Utils
+  uuid: ^2.0.2
+  dartx: ^0.2.0
+
+
+dev_dependencies:
+
+  #Testing
+  flutter_test:
+    sdk: flutter
+
+  # Architecture
+  build_runner: ^1.0.0
+  inject_generator:
+    git:
+      url: https://github.com/google/inject.dart.git
+      path: package/inject_generator
+
+flutter:
+
+  uses-material-design: true
+
+  fonts:
+    - family: Product Sans
+      fonts:
+        - asset: assets/fonts/Product Sans Regular.ttf
+        - asset: assets/fonts/Product Sans Bold.ttf
+        - asset: assets/fonts/Product Sans Italic.ttf
+          style: italic
+        - asset: assets/fonts/Product Sans Bold Italic.ttf
+          style: italic
+
+  assets:
+    - assets/images/
