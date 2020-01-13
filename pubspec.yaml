@@ -34,6 +34,7 @@ dev_dependencies:
 
   # Architecture
   build_runner: ^1.0.0
+  lint: ^1.0.0
   inject_generator:
     git:
       url: https://github.com/google/inject.dart.git
