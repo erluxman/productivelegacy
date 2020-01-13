@@ -5,16 +5,9 @@
 [![codecov](https://codecov.io/gh/erluxman/productiveapp/branch/master/graph/badge.svg)](https://codecov.io/gh/erluxman/productiveapp)
 # Screenshots
 
-# TODO
-![](/art/Todo.png)
-![](/art/createtodo.png )
-# Projects
-![](/art/Projects.png)
-![](/art/createproject.png )
-# Routine
-![](/art/routine.png )
-![](/art/createroutine.png )
-# Journal/Diary
-![](/art/Journal.png)
-![](/art/createjournalentry.png)
-
+# TODO  & Routine
+![](/art/todo.gif)
+![](/art/routine.gif )
+# Projects & Joural
+![](/art/projects.gif)
+![](/art/journal.gif )
