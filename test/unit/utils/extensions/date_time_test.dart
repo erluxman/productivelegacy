@@ -8,7 +8,6 @@ void main() {
       expect(DateTime(2019,1,2).toStringYYYYMMDD(separator:"-"), "2019-01-02");
       expect(DateTime(2020,1,2).toStringYYYYMMDD(separator:" "), "2020 01 02");
       expect(DateTime(2020,10,2).toStringYYYYMMDD(separator:"-"), "2020-10-02");
-      expect(DateTime(2022,10,2).toStringYYYYMMDD(separator:"-"), "2020-10-02");
     });
   });
 }
