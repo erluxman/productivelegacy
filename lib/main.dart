@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(ProductiveApp());
+void main() => runApp(productive());
 
-class ProductiveApp extends StatelessWidget {
+class productive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

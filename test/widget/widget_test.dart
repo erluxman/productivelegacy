@@ -5,7 +5,7 @@ import 'package:productive/main.dart';
 void main() {
   testWidgets('Counter increments test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(ProductiveApp());
+    await tester.pumpWidget(productive());
 
 
     expect(find.byType(Card), findsOneWidget);
