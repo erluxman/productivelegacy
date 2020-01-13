@@ -1,6 +1,7 @@
 # Productive
 
 ## A todo app with project/task/diary/habit/motivation and mood tracking
+[![Dart CI](https://github.com/erluxman/productiveapp/workflows/Dart%20CI/badge.svg)](https://github.com/erluxman/productiveapp/actions)
 
 # Screenshots
 
