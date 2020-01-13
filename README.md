@@ -5,33 +5,15 @@
 # Screenshots
 
 # TODO
-|![](/art/Todo.png)|![](/art/createtodo.png )|
-
-
-
-
-
-
+|![](/art/Todo.png)|
+|![](/art/createtodo.png )|
 # Projects
-!![](/art/Projects.png)|![](/art/createproject.png )|
-
-
-
-
-
-
+|![](/art/Projects.png)|
+|![](/art/createproject.png )|
 # Routine
-!![](/art/routine.png )|![](/art/createroutine.png )|
-
-
-
-
-
-
-
-
-
-
+!![](/art/routine.png )|
+|![](/art/createroutine.png )|
 # Journal/Diary
-!![](/art/Journal.png)|![](/art/createjournalentry.png)|
+!![](/art/Journal.png)|
+|![](/art/createjournalentry.png)|
 
