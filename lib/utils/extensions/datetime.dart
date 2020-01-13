@@ -1,4 +1,4 @@
-import 'package:productive_app/utils/extensions/numbers.dart';
+import 'package:productive/utils/extensions/numbers.dart';
 
 extension DateTimeExtensions on DateTime {
   String toStringYYYYMMDD({String sep: "-"}) {

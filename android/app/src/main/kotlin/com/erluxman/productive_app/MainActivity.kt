@@ -1,4 +1,4 @@
-package com.erluxman.productive_app
+package com.erluxman.productive
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

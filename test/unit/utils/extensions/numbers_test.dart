@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:productive_app/utils/extensions/numbers.dart';
+import 'package:productive/utils/extensions/numbers.dart';
 
 void main() {
   group("NumberTest", () {
