@@ -1,5 +1,5 @@
 on: push
-name: Test, Build and Release apk
+name: Flutter CI
 jobs:
   build:
     name: Build APK
