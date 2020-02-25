@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -15,7 +14,9 @@ class HomePage extends StatelessWidget {
         elevation: 8.0,
         onPressed: () {},
         tooltip: 'Increment',
-        child: Icon(Icons.add,),
+        child: Icon(
+          Icons.add,
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
@@ -60,7 +61,10 @@ class _BottomAppbarRowState extends State<BottomAppbarRow> {
             });
           },
         ),
-        Container(height: 0,width: 32,),
+        Container(
+          height: 0,
+          width: 32,
+        ),
         AppbarMenu(
           text: "Social",
           icon: Icons.people,
