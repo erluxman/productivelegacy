@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
-        child: BottomAppbarRow(),
+        child: BottomAppbarContainer(),
         notchMargin: 8.0,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -28,7 +28,32 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class BottomAppbarContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    List<AppbarMenuData> appBarMenuData = [
+      AppbarMenuData(title: "Home", icon: Icons.home, index: 0),
+      AppbarMenuData(title: "Stats", icon: Icons.pie_chart, index: 1),
+      AppbarMenuData(title: "Social", icon: Icons.people, index: 2),
+      AppbarMenuData(title: "More", icon: Icons.home, index: 3),
+    ];
+    return BottomAppbarRow(appBarMenuData);
+  }
+}
+
+class AppbarMenuData {
+  const AppbarMenuData({this.title, this.icon, this.index});
+
+  final String title;
+  final IconData icon;
+  final int index;
+}
+
 class BottomAppbarRow extends StatefulWidget {
+  const BottomAppbarRow(this.data);
+
+  final List<AppbarMenuData> data;
+
   @override
   _BottomAppbarRowState createState() => _BottomAppbarRowState();
 }
@@ -40,65 +65,31 @@ class _BottomAppbarRowState extends State<BottomAppbarRow> {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        AppbarMenu(
-          text: "Home",
-          icon: Icons.home,
-          isActive: currentIndex == 0,
+      children: widget.data.map((AppbarMenuData data) {
+        return AppbarMenu(
+          title: data.title,
+          icon: data.icon,
+          isActive: data.index == currentIndex,
           callBack: () {
             setState(() {
-              currentIndex = 0;
+              currentIndex = data.index;
             });
           },
-        ),
-        AppbarMenu(
-          text: "Stats",
-          icon: Icons.pie_chart,
-          isActive: currentIndex == 1,
-          callBack: () {
-            setState(() {
-              currentIndex = 1;
-            });
-          },
-        ),
-        Container(
-          height: 0,
-          width: 32,
-        ),
-        AppbarMenu(
-          text: "Social",
-          icon: Icons.people,
-          isActive: currentIndex == 2,
-          callBack: () {
-            setState(() {
-              currentIndex = 2;
-            });
-          },
-        ),
-        AppbarMenu(
-          text: "More",
-          icon: Icons.more_horiz,
-          isActive: currentIndex == 3,
-          callBack: () {
-            setState(() {
-              currentIndex = 3;
-            });
-          },
-        ),
-      ],
+        );
+      }).toList(),
     );
   }
 }
 
 class AppbarMenu extends StatelessWidget {
   const AppbarMenu({
-    this.text = "",
+    this.title = "",
     this.icon,
     this.isActive,
     this.callBack,
   });
 
-  final String text;
+  final String title;
   final IconData icon;
   final bool isActive;
   final Function() callBack;
@@ -119,7 +110,13 @@ class AppbarMenu extends StatelessWidget {
               size: isActive ? 36 : 32,
             ),
           ),
-          Text(text),
+          Text(
+            title,
+            style: TextStyle(
+              color: isActive ? Colors.blue : Colors.black45,
+              fontSize: isActive ? 16 : 14,
+            ),
+          ),
         ],
       ),
     );
