@@ -47,8 +47,9 @@ class BottomAppbarContainer extends StatelessWidget {
     List<AppbarMenuData> appBarMenuData = [
       AppbarMenuData(title: "Home", icon: Icons.home, index: 0),
       AppbarMenuData(title: "Stats", icon: Icons.pie_chart, index: 1),
+      null,
       AppbarMenuData(title: "Social", icon: Icons.people, index: 2),
-      AppbarMenuData(title: "More", icon: Icons.home, index: 3),
+      AppbarMenuData(title: "More", icon: Icons.more_horiz, index: 3),
     ];
     return BottomAppbarRow(appBarMenuData);
   }
@@ -79,6 +80,7 @@ class _BottomAppbarRowState extends State<BottomAppbarRow> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: widget.data.map((AppbarMenuData data) {
+        if (data == null) return Container(width: 20, height: 0);
         return AppbarMenu(
           title: data.title,
           icon: data.icon,
@@ -94,7 +96,7 @@ class _BottomAppbarRowState extends State<BottomAppbarRow> {
   }
 }
 
-class AppbarMenu extends StatelessWidget {
+class AppbarMenu extends StatefulWidget {
   const AppbarMenu({
     this.title = "",
     this.icon,
@@ -108,29 +110,47 @@ class AppbarMenu extends StatelessWidget {
   final Function() callBack;
 
   @override
+  _AppbarMenuState createState() => _AppbarMenuState();
+}
+
+class _AppbarMenuState extends State<AppbarMenu> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      child: Column(
-        children: <Widget>[
-          IconButton(
-            onPressed: () {
-              callBack();
-            },
-            icon: Icon(
-              icon,
-              color: isActive ? Colors.blue : Colors.black45,
-              size: isActive ? 36 : 32,
+    return Padding(
+      padding: const EdgeInsets.only(top: 0.0),
+      child: Container(
+        height: 70,
+        child: Column(
+          children: <Widget>[
+            AnimatedContainer(
+              duration: Duration(milliseconds: 150),
+              height: widget.isActive ? 42 : 36,
+              child: IconButton(
+                onPressed: () {
+                  widget.callBack();
+                },
+                icon: Container(
+                  height: widget.isActive ? 42 : 36,
+                  child: Icon(
+                    widget.icon,
+                    color: widget.isActive ? Colors.blue : Colors.black45,
+                    size: widget.isActive ? 36 : 32,
+                  ),
+                ),
+              ),
             ),
-          ),
-          Text(
-            title,
-            style: TextStyle(
-              color: isActive ? Colors.blue : Colors.black45,
-              fontSize: isActive ? 16 : 14,
+            Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: Text(
+                widget.title,
+                style: TextStyle(
+                  color: widget.isActive ? Colors.blue : Colors.black45,
+                  fontSize: widget.isActive ? 16 : 14,
+                ),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
