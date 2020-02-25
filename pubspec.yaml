@@ -47,11 +47,11 @@ flutter:
   fonts:
     - family: Product Sans
       fonts:
-        - asset: assets/fonts/Product Sans Regular.ttf
-        - asset: assets/fonts/Product Sans Bold.ttf
-        - asset: assets/fonts/Product Sans Italic.ttf
+        - asset: assets/fonts/Product_Sans_Regular.ttf
+        - asset: assets/fonts/Product_Sans_Bold.ttf
+        - asset: assets/fonts/Product_Sans_Italic.ttf
           style: italic
-        - asset: assets/fonts/Product Sans Bold Italic.ttf
+        - asset: assets/fonts/Product_Sans_Bold_Italic.ttf
           style: italic
 
   assets:
