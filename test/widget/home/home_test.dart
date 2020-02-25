@@ -64,4 +64,23 @@ void main() {
         ),
         findsOneWidget);
   });
+
+  testWidgets('Number increases on fab click', (WidgetTester tester) async {
+    await tester.pumpWidget(ProductiveApp());
+    _appbarMenuWithIconActive(Icons.home);
+    expect(find.text("0"), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    expect(find.text("1"), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    expect(find.text("3"), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    expect(find.text("4"), findsOneWidget);
+  });
 }

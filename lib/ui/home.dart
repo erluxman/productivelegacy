@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int fabClickCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,10 +16,16 @@ class HomePage extends StatelessWidget {
           "Productive",
         ),
       ),
-      body: Container(),
+      body: Center(
+        child: Text(fabClickCount.toString()),
+      ),
       floatingActionButton: FloatingActionButton(
         elevation: 8.0,
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            fabClickCount += 1;
+          });
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.add,
