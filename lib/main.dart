@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:productive/ui/home.dart';
+import 'package:productive/features/home/home.dart';
 
 void main() => runApp(ProductiveApp());
 

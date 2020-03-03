@@ -120,38 +120,42 @@ class _AppbarMenuState extends State<AppbarMenu> {
       padding: const EdgeInsets.only(top: 0.0),
       child: Container(
         height: 70,
-        child: Column(
-          children: <Widget>[
-            AnimatedContainer(
-              duration: Duration(milliseconds: 150),
-              height: widget.isActive ? 42 : 36,
-              child: IconButton(
-                onPressed: () {
-                  widget.callBack();
-                },
-                icon: Container(
-                  height: widget.isActive ? 42 : 36,
-                  child: Icon(
-                    widget.icon,
-                    color: widget.isActive ? Colors.blue : Colors.black45,
-                    size: widget.isActive ? 36 : 32,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 4.0),
-              child: Text(
-                widget.title,
-                style: TextStyle(
-                  color: widget.isActive ? Colors.blue : Colors.black45,
-                  fontSize: widget.isActive ? 16 : 14,
-                ),
-              ),
-            ),
-          ],
-        ),
+        child: menuItemContent(),
       ),
     );
+  }
+
+  Column menuItemContent() {
+    return Column(
+        children: <Widget>[
+          AnimatedContainer(
+            duration: Duration(milliseconds: 150),
+            height: widget.isActive ? 42 : 36,
+            child: IconButton(
+              onPressed: () {
+                widget.callBack();
+              },
+              icon: Container(
+                height: widget.isActive ? 42 : 36,
+                child: Icon(
+                  widget.icon,
+                  color: widget.isActive ? Colors.blue : Colors.black45,
+                  size: widget.isActive ? 36 : 32,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 4.0),
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                color: widget.isActive ? Colors.blue : Colors.black45,
+                fontSize: widget.isActive ? 16 : 14,
+              ),
+            ),
+          ),
+        ],
+      );
   }
 }

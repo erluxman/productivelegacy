@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:productive/main.dart';
-import 'package:productive/ui/home.dart';
+import 'package:productive/features/home/home.dart';
 
 void main() {
   testWidgets('Has BottomAppbar of CircularNotchedRectangle shape',
