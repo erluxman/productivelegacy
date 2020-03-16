@@ -1,0 +1,496 @@
+{
+  "app": {
+    "toolbar": {
+      "profile_head": [
+        {
+          "user_profile": "(Upon clicking opens user profile)",
+          "contents": [
+            "Profile pic",
+            "Motivation Quote/Mantra",
+            "Normal Bio",
+            "Send message - takes 20 coins",
+            "Say thank you if he/she inspired you with Gifts bought with coins",
+            "Motivation level",
+            "Coins",
+            "badges won",
+            "stats(The same stats page that gets displayed in ones home screen, it will be made public by default except the addictions)"
+          ]
+        },
+        "motivation level",
+        {
+          "motivation_calculator": {
+            "name": "Motivation Costs",
+            "meta": "Conventions Motivation -> Ⓜ︎, & Coin/Reward -> Ⓒ",
+            "note": "User can add tasks (Tasks/subtask/milestone will be automatically added to Today's goal) or ",
+            "rules": [
+              "App starts with 1Ⓜ︎ and 0Ⓒ as all the user has got is motivation, he does not have any rewards",
+              "User gets 1Ⓜ︎ in a day for opening the app if he does not have any Ⓜ︎ but no Ⓒ as  he has not earned any rewards",
+              "User can spend at max 20Ⓒ for creating different doable items in a day, cost of failure,postpone and deletion are not counted inside this 20",
+              "user can trade 1Ⓜ︎ for 1Ⓒ whever he does not have Ⓒ",
+              "Motivation point Ⓜ︎ can't be more than 100 ever but Ⓒ can"
+            ],
+            "rate": [
+              {
+                "item": "TODO Item",
+                "cost_creation": "1XⒸ",
+                "cost_postpone": "1XⒸ",
+                "rule_postpone": "Can't postpone if today is the deadline, can only postpone to tomorrow else it should be removed from TODO list, though it won't delete the original task/subtask/milestone/project",
+                "cost_removal": "2XⒸ",
+                "reward_completion": "1XⒸ 1XⓂ︎ ",
+                "failure_to_complete": "0XⒸ 0XⓂ︎ for any Todo(coz it gets covered by All day goals) or Pre assignment (Trying to do some milestone/project/task before deadline), in case of deadline failure of that particular item is defined with respect to what type of item it is for eg if that item is Project Task it may be -5 each if its project it might be -10"
+              },
+              {
+                "item": "All Daily Goals(Including todays deadlines(of Project/milestone/task/subtask)",
+                "rule": "Daily Goals/Today without any todo or task is failure by default because the user did not plan the day",
+                "cost_creation": "0XⒸ",
+                "reward_completion": "2XⒸ 2XⓂ︎",
+                "failure_to_complete": "-2XⒸ & -2XⓂ︎  or 5% of total Ⓒ & Ⓜ︎ whichever is bigger"
+              },
+              {
+                "item": "1 Daily Routine Item",
+                "cost_creation": "10XⒸ or 5*(Total existing routine items)XⒸ whichever is bigger",
+                "reward_completion": "1XⒸ 1XⓂ︎ -> Because TODOs will be directly related to routine item for eg: Fix Paging in TODO is realted to work in routine, user should not be awarded twice for the same thing."
+              },
+              {
+                "item": "All Routines",
+                "cost_creation": "0XⒸ (First routine will be automatically created, if you want to create second routine (For eg: Holiday or Week long trekking then it will cost 50XⒸ) by having second Routine Preset, you can select the routine reset you are following before checking off it's items",
+                "reward_completion": "2XⒸ 2XⓂ︎ or total RoutineItem/2 whichever is bigger, decimals are truncated",
+                "failure_to_complete": "-3XⒸ & -3XⓂ︎  or 5% of total Ⓒ & Ⓜ︎ whichever is bigger, decimals truncated"
+              },
+              {
+                "item": "Project task",
+                "cost_creation": "2XⒸ",
+                "cost_postpone_deadline": "2XⒸ 2XⓂ︎",
+                "cost_postpone_deletion": "5XⒸ 5XⓂ︎",
+                "reward_completion": "5XⒸ 5XⓂ︎",
+                "failure_to_complete_within_deadline": "-5XⒸ -5XⓂ︎"
+              },
+              {
+                "item": "Project Subtask",
+                "cost_creation": "1XⒸ",
+                "cost_postpone_deadline": "1XⒸ 1XⓂ︎",
+                "cost_postpone_deletion": "2XⒸ 2XⓂ︎",
+                "reward_completion": "1XⒸ 1XⓂ︎",
+                "failure_to_complete_within_deadline": "-1XⒸ -1XⓂ︎"
+              },
+              {
+                "item": "Project Milestone",
+                "cost_creation": "5XⒸ",
+                "cost_postpone_deadline": "5XⒸ 5XⓂ︎",
+                "cost_postpone_deletion": "10XⒸ 10XⓂ︎",
+                "reward_completion": "15XⒸ 15XⓂ︎",
+                "failure_to_complete_within_deadline": "-15XⒸ -15XⓂ︎"
+              },
+              {
+                "item": "A Project",
+                "cost_creation": "10XⒸ",
+                "cost_postpone_deadline": "10XⒸ 10XⓂ︎",
+                "cost_postpone_deletion": "20XⒸ 20XⓂ︎",
+                "reward_completion": "30XⒸ & 30XⓂ︎ or (total amount invested to create constituent items)XⒸ&Ⓜ︎ whichever is small",
+                "failure_to_complete_within_deadline": "-30XⒸ -30XⓂ︎ or (total amount invested to create constituent items)XⒸ&Ⓜ︎ whichever is small"
+              },
+              {
+                "item": "A daily Log",
+                "cost_creation": "0XⒸ 0XⓂ︎",
+                "reward_completion": "1XⒸ 1XⓂ︎ for every 4 entires until 8 entries, no rewards after 9th entry in that day"
+              },
+              {
+                "item": "A day without addiction",
+                "cost_creation": "20XⒸ -> Cost of adding an addiction",
+                "reward_a_day_without_addiction": "2XⒸ & 2XⓂ︎ or 0.5X(total count of addictions)"
+              }
+            ]
+          }
+        },
+        "last week motivation level (this circular progress will be inside the circular progress of motivation level)"
+      ],
+      "page_title": "Title for that particular feature ",
+      "global_ranking": "ranking page showing people with most motivation level, daily/weekly/monthly/yearly/consistant(they may earn low motivation each day but have kept the streak of completion for the longest time, it won't be daily/weekly but will start from monthly & annually) ranking"
+    },
+    "body": {
+      "tabs": {
+        "home": {
+          "rule": "Any doable item can be postponed but it will take the same amount of creating it to postpone though the it won't be counted for failure to complete the set (Whole Routine / All day todo / Project) but along with coin postpone will also cost motivation points",
+          "meta": "Will contain horizontally scrollable cards/view pager like trello for category take inspiration here https://dribbble.com/shots/5274980-My-Habits-v-1",
+          "hlist": [
+            {
+              "todays_goal": {
+                "weekly_progress": [
+                  "Weekly progress in a bar graph like the months charts in this https://imgur.com/a/Kyt7otB",
+                  "day in of the month below that bar graph",
+                  " OR Day of the week inside a circular progress, and day of month below that"
+                ],
+                "vcards_deadlines": [
+                  "finish task1 july 2",
+                  "finish task2 july 4",
+                  "finish task5 July 7"
+                ],
+                "vcards_todo": [
+                  {
+                    "category_icon": "Fitness",
+                    "name": "Exercise, 100 push ups",
+                    "complete": true,
+                    "on_swipe_right": "Complete the task, let user rate their feeling & time with slider after completing this task using a dialog",
+                    "unlocks": "facebook.apk, facebook.com",
+                    "routine_item": "routine_id_exercise",
+                    "project_item": "project_id_1000_pushups"
+                  },
+                  {
+                    "category_icon": "writing/publishing",
+                    "name": "Write 10 Pages of next book",
+                    "complete": false,
+                    "unlocks": "facebook.apk, facebook.com",
+                    "routine_item": "rotune_id_write_or_publish",
+                    "project_item": "project_id_my_first_book",
+                    "on_swipe_right": "Complete the task, let user rate their feeling & time with slider after completing this task using a dialog",
+                    "on_long_click": "show other actions menu"
+                  },
+                  {
+                    "category_icon": "work",
+                    "name": "Fix the paging issue",
+                    "complete": false,
+                    "on_swipe_right": "Complete the task, let user rate their feeling & time with slider after completing this task using a dialog",
+                    "unlocks": "facebook.apk, facebook.com",
+                    "routine_item": "routine_id_work",
+                    "project_item": "project_id_sprint_week_24/25"
+                  },
+                  {
+                    "category_icon": "grocery",
+                    "name": "Buy chicken",
+                    "complete": true,
+                    "on_swipe_right": "Complete the task, let user rate their feeling & time with slider after completing this task using a dialog",
+                    "unlocks": "facebook.apk, facebook.com",
+                    "routine_item": null,
+                    "project_item": null
+                  },
+                  {
+                    "name": "See all Projects",
+                    "image": "3 horizontal dots"
+                  }
+                ]
+              },
+              "diary": {
+                "date": "2019-07-14",
+                "items-yet-to-complete": [
+                  "project-id45",
+                  "task-id05",
+                  "routine-id50"
+                ],
+                "entries": [
+                  {
+                    "details_text": "did this did that, missed that, recovered it, felt awesome",
+                    "items-completed": [
+                      "project-id4",
+                      "task-id056",
+                      "routine-id103"
+                    ],
+                    "emotions": "***** & ****"
+                  },
+                  {
+                    "details_text": "did this did that, missed that, recovered it, felt awesome",
+                    "items-completed": [
+                      "project-id54",
+                      "task-id06",
+                      "routine-id03"
+                    ],
+                    "emotions": "***"
+                  },
+                  {
+                    "details_text": "did this did that, missed that, recovered it, felt awesome",
+                    "items-completed": [
+                      "project-id44",
+                      "task-id036",
+                      "routine-id323"
+                    ],
+                    "emotions": "*****,**** "
+                  }
+                ]
+              },
+              "projects": {
+                "weekly_progress": [
+                  "Weekly progress in a bar graph like the months charts in this https://imgur.com/a/Kyt7otB",
+                  "day in of the month below that bar graph",
+                  " OR Day of the week inside a circular progress, and day of month below that"
+                ],
+                "vcards": [
+                  {
+                    "name": "writing a book",
+                    "progress": "35% complete",
+                    "onclick": " Open Project window for writing a book"
+                  },
+                  {
+                    "name": "Complete Publishing the app",
+                    "progress": "25% complete",
+                    "onclick": " Open Project window for Complete Publishing  a book"
+                  },
+                  {
+                    "name": "Reduce body:fat to 12",
+                    "progress": "55% complete",
+                    "onclick": " Open Project window for Reduce body:fat to 12"
+                  },
+                  {
+                    "name": "Add new Project",
+                    "image": "Add icon"
+                  },
+                  {
+                    "name": "See all Projects",
+                    "image": "3 horizontal dots"
+                  }
+                ]
+              },
+              "routines": {
+                "weekly_progress": [
+                  "Weekly progress in a bar graph like the months charts in this https://imgur.com/a/Kyt7otB with respect to completion rate of each item",
+                  "day in of the month below that bar graph",
+                  " OR Day of the week inside a circular progress, and day of month below that"
+                ],
+                "meta": "Each routine item will contain a streak for that routine. Routine_acknoledged varaible is determined if the tick to be green(acknoledged) or gray(not acknoledged) & the emotions of that routine will result into the circular arc chart (without touching center like apple fitness) just like dailo app with single or multiple emotions in a day",
+                "history": "Hitory explains the dots/rating to show in a horizontal streak for that particular habit, for example the rating for the same habit for last 7 days",
+                "vcards": [
+                  {
+                    "name": "Focused Work",
+                    "time": "11 AM - 2 PM",
+                    "onclick": " Open Project window for writing a book",
+                    "emotions": "*****,**** default = 🥔",
+                    "unlocks": "twitter.com,facebook.com",
+                    "history": [
+                      "*****,****",
+                      "***,*****,****,*"
+                    ],
+                    "routine_acknoledged": true
+                  },
+                  {
+                    "name": "Do home workout",
+                    "time": "5AM - 6AM",
+                    "onclick": " Do exercise and tone the body",
+                    "unlocks": "carrom.apk",
+                    "history": [
+                      "*****,****",
+                      "***,*****,****,*"
+                    ],
+                    "emotions": "null",
+                    "routine_acknoledged": false
+                  },
+                  {
+                    "name": "Save $10",
+                    "time": "8AM - 8:30AM",
+                    "onclick": " Save money so that you can buy and do shopping at amazon.com",
+                    "unlocks": "hamrobaazar.com, amazon.com ",
+                    "history": [
+                      "*****,****",
+                      "***,*****,****,*"
+                    ],
+                    "emotions": "null",
+                    "routine_acknoledged": false
+                  },
+                  {
+                    "name": "Add new rotuine",
+                    "image": "Add icon"
+                  },
+                  {
+                    "name": "See all Routine",
+                    "image": "3 horizontal dots"
+                  }
+                ]
+              },
+              "Goodbye addictions": {
+                "Meta": "Will show a list of addictions and how much long has it been since you stopped doing them, you will be able to click on the date of yesterday (among last 7 days in horizontal line) and mark that day to go without doing any addiction, actually one can mark off not doing addiction for last 7 days",
+                "vlist": [
+                  {
+                    "name": "Give up Drinking",
+                    "streak_days": 8,
+                    "history": "O✓✓OO✓✓✓✓✓✓✓✓"
+                  },
+                  {
+                    "name": "Give up Smoking",
+                    "streak_days": 3,
+                    "history": "O✓✓OO✓✓✓"
+                  },
+                  {
+                    "name": "Give up Porn",
+                    "streak_days": 5,
+                    "history": "O✓✓OO✓✓✓✓✓"
+                  },
+                  {
+                    "name": "Give up Late night stay",
+                    "streak_days": 80,
+                    "history": "O✓✓OO✓✓✓✓✓✓✓✓✓✓"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "stats": {
+          "meta": "This stats page accumulates all the stats of the features, most of the stats already arrive somewhere else already for example dashboard",
+          "stats": [
+            {
+              "name": "circular-progress-calendar ",
+              "meta": "This is a calendar of productivity, basically a cell/day in the calendar will represent 1. The day of the month and week, 2. Circular Progress for \"today's Goal\" completion ration, 3. donut chart for the ranges of emotions that day, 4. A Linear progress inside the circle(Like fabolus in my instagram) for percentage of routine items completed",
+              "meta_alternative": "Just a simple circular progress bar showing the motivation at the end of that day, when clicked on it we can show the detailed stats of that day in another screen / dialog ",
+              "design": "day in the midddle, sorrunded by routine which is sorrunded by Today's goal completion percentage",
+              "features": "Ability to switch from calendar view to graph view where it will show the curve of emotions, motivation score's fluctuation & today's goal completion rate."
+            },
+            {
+              "name": "Projects stat",
+              "meta": "Project progress in a graph (of multiple curves for multiple projects) showing the task completion path throughout the week/month graph is (number to tasks (Not subtask but subtask will also change the graph depending on how many subtasks are there in a task) completed vs total number to tasks) ",
+              "feature": "Rank the projects with respect to how much progress happened in last week or month"
+            },
+            {
+              "name": "Emotions stats",
+              "meta": "It will show the frequency of moods (For example super-happy - 45 times, okay-12 times, horrible - 5 times)",
+              "extra-feature": "It will show the frequency of category of taks/routine for each frequency for eg: super-happy - 45 times ( 32/45 times work, 20/45 - talk with wife,), these action frequencies will be displayed once yser clicks on the tab of emotions",
+              "also": "Just like frequency of task category, once we click on the emoji frequency  we will also be able to see a see a pie chart of time distribution for that particular emotion for eg : 64% (wake up -office time) 20% (Office time) 10%(office end to bed time), 6%(Amazing sleep/night)",
+              "feature-of-suggestion-to-user": "Why are you not happy with your sleeping time? Is your sleeping habait not good or you do not rate good night sleep that high?, if So, you should value a good night sleep more than this, if your sleep is not good, here are some suggestions that you can add to your todo list, (Turn off your devices and light exactly at 10PM (Your sleeping time),Play some ambient noise/rain sounds to help sleep, or a sleeping story"
+            },
+            {
+              "name": "Time logging ",
+              "meta": "It will display how the day is being spent and how much of time is spent in what kind of activities."
+            },
+            {
+              "name": "Routine stats",
+              "meta": "frequency of routine completion stats(just like emotions) with respect to how many items are there in routine, How much time does your routine cover(if you cover more than 10 hours in routine, you may not make it),time of the day (like emotions)",
+              "extra": "Most completed habit items, least completed habit item. If there are more than 2 habits with less than 80% completion rate, only one of those incomplete routine item survives for next month, in case of week if that there are more than 2 routine items that weren't completed more than 4 times only one of them survives for next week (User get's to choose which one to keep)"
+            },
+            {
+              "name": "App and site usage stats",
+              "meta": "This will show PieCharts of apps and websites stats (times opened and time spent on each apps/sites , also give them suggestion about not using apps more than 20 mins a day and suggest the app to be put on blocked list), the times user had tried to open those apps or websites but were blocked from using them and give them an idea about how much time has been saved. "
+            },
+            {
+              "name": "addiction stats",
+              "meta": "shows a streak of days or counter for the various addiction user wants to stop, they are private by default but you can make them public to inspire opthers. We can also see the leaderboard of addiction giveup in wheich users can like and comment also"
+            }
+          ]
+        },
+        "social": {
+          "meta": "Will contain a vertical list of card, which may have some horizontal list (in case a user shares his routine as well as his monthly report)",
+          "search_user": {
+            "meta": "user can search other uses with their name or email or id or qrcode and browse their profile. "
+          },
+          "vlist": [
+            {
+              "user_name": "Laxman Bhattarai",
+              "user_image": "productive.com/laxman.png",
+              "motivation_level": 79,
+              "last_week_motivation_level": 55,
+              "hlist": [
+                {
+                  "type": "today",
+                  "total_tasks": 10,
+                  "completed_tasks": 8
+                },
+                {
+                  "type": "routine",
+                  "vlist": [
+                    {
+                      "name": "Exercise",
+                      "routine_acknoledged": true,
+                      "emotions": "***** & ****"
+                    },
+                    {
+                      "name": "Exercise",
+                      "routine_acknoledged": false,
+                      "emotions": "***"
+                    },
+                    {
+                      "name": "Exercise",
+                      "routine_acknoledged": false,
+                      "emotions": "null"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "others": {
+          "menu": [
+            {
+              "title": "Today's Goals"
+            },
+            {
+              "title": "Diary"
+            },
+            {
+              "title": "Projects",
+              "meta" : ""
+            },
+            {
+              "title": "Give up addiction",
+              "meta": "Will contain a list of addictions one is trying to give up"
+            },
+            {
+              "title": "Routine",
+              "meta": "User will have to fill all the form, and provide every details because if user does not have the urge to even write how will he complete the project, he will most likely never complete those habits.",
+              "regulation": "If user is found to have used random text to fill the fields in the habit section, that habit will be removed.",
+              "routines": [
+                {
+                  "name": "read TDD with example",
+                  "unicode_icon": ":book:",
+                  "when": "9:40 AM / Just after Eating and before "
+                }
+              ]
+
+            },
+            {
+              "title": "Site/App Blocker"
+            },
+            {
+              "title": "What permissions we need in your phone and why"
+            },
+            {
+              "title": "What do we track and why we do that"
+            },
+            {
+              "title": "Feture Requests"
+            },
+            {
+              "title": "Support & Feedback"
+            },
+            {
+              "title": "FAQs",
+              "contents": [
+                "Why do we have coins and motivation level ?",
+                "Why does this app act like game and forces to spend coins and motivation to create a task or project?",
+                "Why can't I create as much tasks and habits as I want from the beginning",
+                "Why can't I spend more than 20 coins in a day even if I have 200?",
+                "Why is this app so restrictive instead of letting us do what we want?",
+                "Why is buying coins so expensive (2 dollar for a coin) ? Coz we don't want you to buy coins rather earn them by being productive"
+              ]
+            },
+            {
+              "title": "Donate productivity to underprivilaged",
+              "tabs": [
+                "List of donors",
+                "List of underprevilaged",
+                "List of people who you have donated to or taken donation from"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "date": "Will present the date of the session, it could be \"Today July 4, 2019\" if we click on that date we can see a menu to navigate to another date",
+    "date_navigator": "There will be two arrows on both sides of date, which will also enable an user to jump to different date."
+  },
+  "fab_button": {},
+  "when_unlocking_phone": {
+    "minimum_sampling_time(time in minute to wait before shoing pop after user unlocks the screen)": 15,
+    "dialog": {
+      "what_were_you_doing": {
+        "ui": "Options on the list, when they are tapped they get highlighted"
+      },
+      "time_feelings": {
+        "ui": "time (the sum of all times cannot be bigger than the sum of times of individual items) and emoji slider for the tasks that were tapped in previous screen)"
+      },
+      "actions": [
+        "done (Animates the dialog content to next screen time_feelings)"
+      ]
+    }
+  },
+  "data_structure": {
+    "thoughts": [
+      "Every kind of doable i.e. Todo, tasks, projects etc will be a simple data structure with different rates & doable_types=ENUM{Task,Project,Milestones}"
+    ]
+  }
+}
